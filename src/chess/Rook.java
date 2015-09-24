@@ -24,7 +24,8 @@ public class Rook extends ChessPiece implements ChessPieceMovement
 		int x0 = getX();
 		int y0 = getY();
 		ArrayList<Coord> coords= new ArrayList<Coord>();
-		//System.out.println("Moving up");
+
+		// Up
 		y0 = getY()+1; 
 		while(!outOfRange(x0, y0))
 		{
@@ -39,8 +40,8 @@ public class Rook extends ChessPiece implements ChessPieceMovement
 				break;
 			y0++;
 		}
-		//===========================================			
-		//System.out.println("Moving Down");
+
+		// Down
 		y0 = getY()-1;
 		while(!outOfRange(x0, y0))
 		{
@@ -54,10 +55,10 @@ public class Rook extends ChessPiece implements ChessPieceMovement
 			else
 				break;
 			y0--;
-		}
-		//===========================================	
+		} 
 		y0 = getY();
-		//System.out.println("Moving Right");
+
+		// Right
 		x0 = getX()+1;
 		while(!outOfRange(x0, y0))
 		{
@@ -72,8 +73,8 @@ public class Rook extends ChessPiece implements ChessPieceMovement
 				break;
 			x0++;
 		}
-		//===========================================			
-		//System.out.println("Moving Left");
+
+		// Left
 		x0 = getX()-1; 
 		while(!outOfRange(x0, y0))
 		{

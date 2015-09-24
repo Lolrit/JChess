@@ -13,9 +13,7 @@ public class King extends ChessPiece implements ChessPieceMovement{
 		if(isBlack) 
 			setCoord(3,0); 
 		else 
-			setCoord(4,7);
-		
-		System.out.println(coord.toString() + " is "+ isBlack);
+			setCoord(4,7); 
 		
 		onBoard = true; 
 	}	
@@ -23,10 +21,12 @@ public class King extends ChessPiece implements ChessPieceMovement{
 	public ArrayList<Coord>  availableMoves (ChessPiece pieces[][])
 	{
 		int x0 = getX();
-		int y0 = getY();
+		int y0 = getY()+1;
 		ArrayList<Coord> coords= new ArrayList<Coord>();
-		//System.out.println("Moving up");
+		
+		// Down
 		y0 = getY()+1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -34,9 +34,21 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving Down");
+		
+		// Up
 		y0 = getY()-1;
+		
+		if(!outOfRange(x0, y0))
+		{
+			if (!unitHere(pieces,x0,y0)) 
+				coords.add(new Coord(x0,y0));
+			else if(enemyHere(pieces[x0][y0]))
+				coords.add(new Coord(x0,y0));
+		}		
+		
+		// Right
+		x0 = getX()+1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -44,19 +56,10 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}			
-		//===========================================			
-		//System.out.println("Moving Right");
-		x0 = getX()+1;
-		if(!outOfRange(x0, y0))
-		{
-			if (!unitHere(pieces,x0,y0)) 
-				coords.add(new Coord(x0,y0));
-			else if(enemyHere(pieces[x0][y0]))
-				coords.add(new Coord(x0,y0));
-		}			
-		//===========================================			
-		//System.out.println("Moving Left");
+		
+		// Left
 		x0 = getX()-1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -64,10 +67,11 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving upRight");
+		
+		// Down Right
 		x0 = getX()+1;
 		y0 = getY()+1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -75,10 +79,11 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving UpLeft");
+		
+		// Down Left
 		x0 = getX()-1;
 		y0 = getY()+1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -86,10 +91,11 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving DownRight");
+		
+		// Up Right
 		x0 = getX()+1;
 		y0 = getY()-1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -97,10 +103,11 @@ public class King extends ChessPiece implements ChessPieceMovement{
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving DownLeft");
+		
+		//Up Left
 		x0 = getX()-1;
 		y0 = getY()-1;
+		
 		if(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 

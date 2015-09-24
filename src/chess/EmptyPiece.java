@@ -1,6 +1,4 @@
-package chess;
-
-import java.util.ArrayList;
+package chess; 
 
 public class EmptyPiece extends ChessPiece { 
 	

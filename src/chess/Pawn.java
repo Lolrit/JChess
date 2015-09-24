@@ -11,9 +11,7 @@ public class Pawn extends ChessPiece implements ChessPieceMovement  {
 		if(isBlack) 
 			setCoord(count,1); 
 		else 
-			setCoord(count,6);
-		
-		System.out.println(coord.toString() + " is "+ isBlack);
+			setCoord(count,6); 
 		
 		onBoard = true; 
 	}	
@@ -23,62 +21,50 @@ public class Pawn extends ChessPiece implements ChessPieceMovement  {
 		int x0 = getX();
 		int y0 = getY();
 		ArrayList<Coord> coords= new ArrayList<Coord>(); 
-		if(isBlack)
+		if(isBlack) 
+			y0 = getY()+1; 
+		else
+			y0 = getY()-1;
+		
+		// Move up one
+		if(!outOfRange(x0, y0))
 		{
-			y0 = getY()+1;
-			if(!outOfRange(x0, y0))
+			if (!unitHere(pieces,x0,y0))  
+				coords.add(new Coord(x0,y0));
+		
+			if(x0<7)
 			{
-				if (!unitHere(pieces,x0,y0)) //check
-					coords.add(new Coord(x0,y0));
-			
-				if(x0<7)
-				{
-					if(enemyHere(pieces[x0+1][y0]))
-					{	
-						coords.add(new Coord(x0+1,y0));
-					}
+				// Attack up right
+				if(enemyHere(pieces[x0+1][y0]))
+				{	
+					coords.add(new Coord(x0+1,y0));
 				}
-				if(x0>1)
-				{
-					if(enemyHere(pieces[x0-1][y0]))
-					{
-						coords.add(new Coord(x0-1,y0));
-					}
-				}
-				
 			}
-			if(!hasMoved)
+			if(x0>1)
 			{
-				x0 = getX();
-				y0 = getY();
+				// Attack up left
+				if(enemyHere(pieces[x0-1][y0]))
+				{
+					coords.add(new Coord(x0-1,y0));
+				}
+			}
+			
+		}
+		// Double Up
+		if(!hasMoved)
+		{
+			x0 = getX();
+			y0 = getY();
+			if(isBlack) {
 				if(!outOfRange(x0, y0+2))
 					coords.add(new Coord(x0,y0+2));
 			}
-		}
-		else
-		{
-			y0 = getY()-1;
-			if(!outOfRange(x0, y0)){
-				if (!unitHere(pieces,x0,y0)) 
-					coords.add(new Coord(x0,y0));
-			
-				if(x0<7){
-					if(enemyHere(pieces[x0+1][y0]))
-						coords.add(new Coord(x0+1,y0));}
-				
-				if(x0>1){
-					if(enemyHere(pieces[x0-1][y0]))
-						coords.add(new Coord(x0-1,y0));}
-				
-			}
-			if(!hasMoved)
-			{
-				x0 = getX();
-				y0 = getY();
+			else {
 				if(!outOfRange(x0, y0-2))
 					coords.add(new Coord(x0,y0-2));
 			}
-		}  
+		} 
+		 
 		return coords;
 	}
 }

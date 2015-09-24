@@ -10,9 +10,9 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 		super(count*7, 7, isBlack); 
 		
 		if(isBlack) 
-			setCoord(count*6,0); 
+			setCoord(1+count*5,0); 
 		else 
-			setCoord(count*6,7);
+			setCoord(1+count*5,7);
 		
 		System.out.println(coord.toString() + " is "+ isBlack);
 		
@@ -24,7 +24,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 		int x0 = getX();
 		int y0 = getY();
 		ArrayList<Coord> coords= new ArrayList<Coord>();
-		//System.out.println("Moving up1 Right2");
+		
+		// Down 1 Right 2
 		x0 = getX()+2;
 		y0 = getY()+1;
 		if(!outOfRange(x0, y0))
@@ -34,8 +35,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving down1 Right2");
+		
+		// Up 1 Right 2
 		x0 = getX()+2;
 		y0 = getY()-1;
 		if(!outOfRange(x0, y0))
@@ -45,8 +46,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving up1 left2");
+		
+		// Down 1 left 2
 		x0 = getX()-2;
 		y0 = getY()+1;
 		if(!outOfRange(x0, y0))
@@ -56,8 +57,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		};
-		//===========================================			
-		//System.out.println("Moving down1 left2");
+		
+		// Up 1 Left 2
 		x0 = getX()-2;
 		y0 = getY()-1;
 		if(!outOfRange(x0, y0))
@@ -67,8 +68,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving up2 Right1");
+		
+		// Down 2 Right 1
 		x0 = getX()+1;
 		y0 = getY()+2;
 		if(!outOfRange(x0, y0))
@@ -78,8 +79,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving down2 Right1");
+		
+		// Up 2 Right 1
 		x0 = getX()+1;
 		y0 = getY()-2;
 		if(!outOfRange(x0, y0))
@@ -89,8 +90,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving up2 left1");
+		
+		// Down 2 Right 1
 		x0 = getX()-1;
 		y0 = getY()+2;
 		if(!outOfRange(x0, y0))
@@ -100,8 +101,8 @@ public class Knight extends ChessPiece implements ChessPieceMovement
 			else if(enemyHere(pieces[x0][y0]))
 				coords.add(new Coord(x0,y0));
 		}
-		//===========================================			
-		//System.out.println("Moving down2 left1");
+		
+		// Up 2 Left 1
 		x0 = getX()-1;
 		y0 = getY()-2;
 		if(!outOfRange(x0, y0))

@@ -1,8 +1,6 @@
 package chess;
 
-import java.util.ArrayList;
-
-import javax.swing.JButton;
+import java.util.ArrayList; 
 
 public interface ChessPieceMovement
 {  

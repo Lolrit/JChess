@@ -1,0 +1,6 @@
+add toolbar and perform a dramatic code cleaning
+
+I added a toolbar along with reset, save, and load functionality
+I also performed a huge code cleaning, removing a ton of unnecessary
+or non-sensical code (this was the first major thing I ever coded
+so there was a lot...) 

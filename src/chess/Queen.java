@@ -10,7 +10,7 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 		super(3, 7, isBlack); 
 		
 		if(isBlack) 
-			setCoord(3,0); 
+			setCoord(4,0); 
 		else 
 			setCoord(3,7);
 		
@@ -25,8 +25,8 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 		int y0 = getY();
 		ArrayList<Coord> coords= new ArrayList<Coord>();
 		
-		System.out.println("Moving up");
-		y0 = getY()+1;
+		// Down
+		y0 = getY()+1; 
 		while(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -40,9 +40,9 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 				break;
 			y0++;
 		}
-		//===========================================			
-		//System.out.println("Moving Down");
-		y0 = getY()-1;
+		
+		// Up
+		y0 = getY()-1; 
 		while(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -57,9 +57,9 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 			y0--;
 		}
 		y0 = getY();
-		//===========================================			
-		//System.out.println("Moving Right");
-		x0 = getX()+1;
+		
+		// Right
+		x0 = getX()+1; 
 		while(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -73,9 +73,9 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 				break;
 			x0++;
 		}
-		//===========================================			
-		//System.out.println("Moving Right");
-		x0 = getX()-1;
+		
+		// Left
+		x0 = getX()-1; 
 		while(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -89,10 +89,10 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 				break;
 			x0--;
 		}
-		//===========================================			
-		//System.out.println("Moving Left");
+		
+		// Up Left
 		x0 = getX()-1;
-		y0 = getY()-1;
+		y0 = getY()-1; 
 		while(!outOfRange(x0, y0))
 		{
 			if (!unitHere(pieces,x0,y0)) 
@@ -107,8 +107,8 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 			x0--;
 			y0--;
 		}
-		//===========================================			
-		//System.out.println("Moving upRight");
+
+		// Down Right
 		x0 = getX()+1;
 		y0 = getY()+1;
 		while(!outOfRange(x0, y0))
@@ -125,8 +125,8 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 			x0++;
 			y0++;
 		}
-		//===========================================			
-		//System.out.println("Moving UpLeft");
+		
+		// Down left
 		x0 = getX()-1;
 		y0 = getY()+1;
 		while(!outOfRange(x0, y0))
@@ -143,8 +143,7 @@ public class Queen extends ChessPiece implements ChessPieceMovement{
 			x0--;
 			y0++;
 		}
-		//===========================================			
-		//System.out.println("Moving DownRight");
+		// Down Right
 		x0 = getX()+1;
 		y0 = getY()-1;
 		while(!outOfRange(x0, y0))
