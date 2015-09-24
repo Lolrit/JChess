@@ -1,17 +1,15 @@
 # JChess
 A Two Player Chess Game Written in Java. 
 
-Not quite finished but it is playable.
+# Features
+
+ - Save/Load 
+   - on the toolbar at the top of the window you will find two buttons, save and load. Use the to save the game you have in progress or resume one that you have already saved!
+ - Reset
+   - Opponent got you beat? No way out? No worries, you don't have to play all the way to your agonizing defeat! just hit the new button at the top to start over!
 
 --
 
 # Planned Features
-
- - Save/Load Games
-   - Save your current game and pick back up where you left off!
-   
- - Reset Game
-   - Name, says it all. press the button to restart the game back to the beginning and try again!
-   
  - Replay!
    - Review a finished game move by move to analyze your stradegy and see where you went wrong(or right!)
