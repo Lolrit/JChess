@@ -1,5 +1,8 @@
 # JChess
-A Two Player Chess Game Written in Java. 
+The first major thing I ever programmmed, recently revamped and brought up to my current standards. Its a simple 2 player chess game with saving, and loading functionality. It is programmed in java heavilly utilizing Java Swing. 
+
+Going back and looking over the original code for this project was extremely humbling. I recall thinking it was all pure genius at the time I wrote it, but reading over it almost 2 years later I was tempted to just toss the whole thing out the window and start over (I practically did considering how many lines of code ended up being modified...).  It was a valuable lesson in humility.
+
 
 # Features
 
